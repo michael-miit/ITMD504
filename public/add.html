@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    <head>
+        <title>Add Student Details</title>
+        
+<!-- AngularJS File -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<!-- Custom JS Controller -->
+<script src="js/controller.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="myApp" ng-controller="formCtrl">
+    <div class="container">
+        <h2>Add Student Details:</h2>
+        <form ng-submit="user(info)">  
+            <div class="form-group">
+                <label for="firstname">First Name<span class="text-warning">*</span></label>
+                <input type="text" id="firstname" name="firstname" ng-model="info.firstname" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last name</label>
+                <input type="text" id="lastname" ng-model="info.lastname" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="number">Mobile No</label>
+                <input type="number" id="number" ng-model="info.number" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" ng-model="info.email" class="form-control" autocomplete="true">
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" ng-model="info.age" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Add a Student!</button>
+        </form>
+        
+    </div>     
+</body>
+</html>
