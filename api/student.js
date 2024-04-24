@@ -4,7 +4,7 @@ var CRUD = require('mysql-crud');
 
 var connection = mysql.createPool({
     database : 'crudDB',
-    user     :  'root',
+    user     :  'mysql',
     password :  '',
     host     :  'localhost'
 });
