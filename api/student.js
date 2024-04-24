@@ -4,9 +4,9 @@ var CRUD = require('mysql-crud');
 
 var connection = mysql.createPool({
     database : 'crudDB',
-    user     :  'mysql',
-    password :  '',
-    host     :  'localhost'
+    user     :  'doadmin',
+    password :  'AVNS_AiBkg6cqHy8Fzv6UzAw',
+    host     :  'db-mysql-sfo3-01008-do-user-16377235-0.c.db.ondigitalocean.com'
 });
 
 var studentCRUD = CRUD(connection, 'student');
