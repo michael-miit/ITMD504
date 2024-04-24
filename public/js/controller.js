@@ -3,7 +3,7 @@ app.controller('formCtrl', function($scope, $http,$location,$window) {
 
     /***********For Add student detail into database***********/ 
     $scope.user = function(info) {
-        $http.post('http://localhost:7000/api/'+'student',info).then(successCallback, errorCallback);
+        $http.post('http://64.23.217.89:7000/api/'+'student',info).then(successCallback, errorCallback);
 
         function successCallback(response){
             window.location.href="index.html"
@@ -24,7 +24,7 @@ app.controller('formCtrl', function($scope, $http,$location,$window) {
 
      /***********For Showing All Details of Students in the List***********/ 
      $scope.allUsers=function(){
-         $http.get('http://localhost:7000/api/'+'allstudent').then(successCallback, errorCallback);
+         $http.get('http://64.23.217.89:7000/api/'+'allstudent').then(successCallback, errorCallback);
 
          function successCallback(response){
              $scope.users=response.data;
@@ -43,7 +43,7 @@ app.controller('formCtrl', function($scope, $http,$location,$window) {
      }
      $scope.students=function(info){
         var id=window.localStorage.getItem('id');
-        $http.post('http://localhost:7000/api/'+'studentUpdate/'+id,info).then(successCallback, errorCallback);
+        $http.post('http://64.23.217.89:7000/api/'+'studentUpdate/'+id,info).then(successCallback, errorCallback);
 
         function successCallback(response){
             window.location.href="index.html"
@@ -54,7 +54,7 @@ app.controller('formCtrl', function($scope, $http,$location,$window) {
     }
     $scope.editId = function() {
         var id=window.localStorage.getItem('id');
-        $http.get('http://localhost:7000/api/'+'studentDetail/'+id).then(successCallback, errorCallback);
+        $http.get('http://64.23.217.89:7000/api/'+'studentDetail/'+id).then(successCallback, errorCallback);
 
         function successCallback(response){
             $scope.userinfo=response.data;
@@ -70,7 +70,7 @@ app.controller('formCtrl', function($scope, $http,$location,$window) {
 
     /***********For deleting students details from database**************/
     $scope.deleteUser=function(id){
-       $http.get('http://localhost:7000/api/'+'deleteStudents/'+id).then(successCallback, errorCallback);
+       $http.get('http://64.23.217.89:7000/api/'+'deleteStudents/'+id).then(successCallback, errorCallback);
 
        function successCallback(response){
            $scope.deleteId=response.data;
