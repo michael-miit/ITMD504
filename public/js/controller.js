@@ -2,7 +2,7 @@ var app = angular.module('myApp', []);
 app.controller('formCtrl', function($scope, $http,$location,$window) {
     $scope.searchQuery = '';
     $scope.currentPage = 1; // Initialize current page
-    $scope.rowsPerPage = 3; // Set the number of rows per page
+    $scope.rowsPerPage = 20; // Set the number of rows per page
     $scope.startIndex = 0; // Initialize starting index for each page
     $scope.users = []; // Your entire dataset
     $scope.filteredUsers = $scope.users; // Initialize the filtered list with all users
