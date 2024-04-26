@@ -1,6 +1,6 @@
 var app = angular.module('myApp', []);
 app.controller('formCtrl', function($scope, $http,$location,$window) {
-
+    $scope.searchQuery = '';
     /***********For Add student detail into database***********/ 
     $scope.user = function(info) {
         $http.post('http://64.23.217.89:7000/api/'+'student',info).then(successCallback, errorCallback);
@@ -34,6 +34,12 @@ app.controller('formCtrl', function($scope, $http,$location,$window) {
              //error code
          }
      };
+     $scope.searchFilter = function(user) {
+        var query = $scope.searchQuery.toLowerCase();
+        return (
+          (user.fname && user.fname.toLowerCase().includes(query))
+        );
+      };
      /***********./For Showing All Details of Students in the List***********/ 
 
     /***********For updating students details from database**************/  
